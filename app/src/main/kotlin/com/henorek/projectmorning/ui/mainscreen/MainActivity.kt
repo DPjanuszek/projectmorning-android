@@ -7,8 +7,14 @@ import com.henorek.projectmorning.R
 import com.henorek.projectmorning.ui.base.configs.ActivityConfig
 import com.henorek.projectmorning.ui.base.configs.ActivityConfigBuilder
 import com.henorek.projectmorning.ui.base.views.BaseActivity
+import com.henorek.projectmorning.ui.logic.Time
+import timber.log.Timber
 
 class MainActivity : BaseActivity<IMainView, MainPresenter>(), IMainView {
+  override fun addToCreate() {
+   val time: Time=Time();
+    Timber.d(time.getTime())
+  }
 
   override fun addFragments() {
   }

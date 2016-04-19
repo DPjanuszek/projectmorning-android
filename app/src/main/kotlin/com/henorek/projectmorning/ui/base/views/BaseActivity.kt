@@ -22,14 +22,18 @@ abstract class BaseActivity<VIEW : IBaseView, PRESENTER : BasePresenter<VIEW>> :
 
     prepareView(savedInstanceState)
     addFragments()
+      addToCreate()
   }
+
+
+    protected abstract fun addToCreate()
 
   protected abstract val config: ActivityConfig
 
   protected abstract fun prepareView(savedInstanceState: Bundle?)
 
-  protected abstract fun addFragments()
 
+  protected abstract fun addFragments()
   private fun setContentView() {
     val root = View.inflate(this, activityConfig!!.layoutId, null)
     setContentView(root)
